@@ -1,0 +1,583 @@
+/*!
+ * -------------------------------------
+ * Web Skin Peripheral CSS for horizontally
+ * centering glyphs that are off-center
+ * on purpose so that they left-align with
+ * their "add" sister glyphs
+ * (e.g. file-generic, file-generic-add)
+ *
+ * These glyphs remain left-aligned,
+ * unless they are nested within a
+ * `.text-center` or `.btn.no-text`
+ * parent selector.
+ * ---
+ * MSIE Support: 8
+ * Touch UI Support: false
+ * ---
+ * Requires
+ *   web-skin Core CSS
+ * ---
+ * Copyright 2015 Workiva
+ * -------------------------------------
+ */
+.no-text .icon-decimals-decrease:before,
+.text-align-center .icon-decimals-decrease:before {
+  left: -0.05rem;
+}
+
+.no-text .icon-decimals-decrease.icon-two-color:after,
+.text-align-center .icon-decimals-decrease.icon-two-color:after {
+  left: -0.05rem;
+}
+
+.no-text .icon-review:before,
+.text-align-center .icon-review:before {
+  left: -0.05rem;
+}
+
+.no-text .icon-review.icon-two-color:after,
+.text-align-center .icon-review.icon-two-color:after {
+  left: -0.05rem;
+}
+
+.no-text .icon-copy:before,
+.text-align-center .icon-copy:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-copy.icon-two-color:after,
+.text-align-center .icon-copy.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-blacklines-next:before,
+.text-align-center .icon-blacklines-next:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-blacklines-next.icon-two-color:after,
+.text-align-center .icon-blacklines-next.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-blacklines-prev:before,
+.text-align-center .icon-blacklines-prev:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-blacklines-prev.icon-two-color:after,
+.text-align-center .icon-blacklines-prev.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-template-child:before,
+.text-align-center .icon-template-child:before {
+  left: 0.15rem;
+}
+
+.no-text .icon-clipboard:before,
+.text-align-center .icon-clipboard:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-clipboard.icon-two-color:after,
+.text-align-center .icon-clipboard.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-arrow-up:before,
+.text-align-center .icon-arrow-up:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-arrow-right:before,
+.text-align-center .icon-arrow-right:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-arrow-down:before,
+.text-align-center .icon-arrow-down:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-arrow-left:before,
+.text-align-center .icon-arrow-left:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-arrow-up-sign-outline:before,
+.text-align-center .icon-arrow-up-sign-outline:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-arrow-down-sign-outline:before,
+.text-align-center .icon-arrow-down-sign-outline:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-gripper-rule-vertical:before,
+.text-align-center .icon-gripper-rule-vertical:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-italic:before,
+.text-align-center .icon-italic:before {
+  left: -0.05rem;
+}
+
+.no-text .icon-footnote:before,
+.text-align-center .icon-footnote:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-footnote.icon-two-color:after,
+.text-align-center .icon-footnote.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-filter:before,
+.text-align-center .icon-filter:before {
+  left: -0.05rem;
+}
+
+.no-text .icon-filter-outline:before,
+.text-align-center .icon-filter-outline:before {
+  left: -0.05rem;
+}
+
+.no-text .icon-backward:before,
+.text-align-center .icon-backward:before {
+  left: -0.05rem;
+}
+
+.no-text .icon-previous:before,
+.text-align-center .icon-previous:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-next:before,
+.text-align-center .icon-next:before {
+  left: -0.05rem;
+}
+
+.no-text .icon-calendar:before,
+.text-align-center .icon-calendar:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-enter:before,
+.text-align-center .icon-enter:before {
+  left: -0.05rem;
+}
+
+.no-text .icon-exit:before,
+.text-align-center .icon-exit:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-table:before,
+.text-align-center .icon-table:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-view-print-area:before,
+.text-align-center .icon-view-print-area:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-view-print-area.icon-two-color:after,
+.text-align-center .icon-view-print-area.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-table-insert-column:before,
+.text-align-center .icon-table-insert-column:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-table-insert-column.icon-two-color:after,
+.text-align-center .icon-table-insert-column.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-table-remove-column:before,
+.text-align-center .icon-table-remove-column:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-table-remove-column.icon-two-color:after,
+.text-align-center .icon-table-remove-column.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-table-insert-row:before,
+.text-align-center .icon-table-insert-row:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-table-insert-row.icon-two-color:after,
+.text-align-center .icon-table-insert-row.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-table-remove-row:before,
+.text-align-center .icon-table-remove-row:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-table-remove-row.icon-two-color:after,
+.text-align-center .icon-table-remove-row.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-workbook-sheet:before,
+.text-align-center .icon-workbook-sheet:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-workbook-row-column:before,
+.text-align-center .icon-workbook-row-column:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-workbook-row-column.icon-two-color:after,
+.text-align-center .icon-workbook-row-column.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-zoom-page-height:before,
+.text-align-center .icon-zoom-page-height:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-fill-range:before,
+.text-align-center .icon-twfr-fill-range:before {
+  left: -0.05rem;
+}
+
+.no-text .icon-twfr-fill-range.icon-two-color:after,
+.text-align-center .icon-twfr-fill-range.icon-two-color:after {
+  left: -0.05rem;
+}
+
+.no-text .icon-twfr-permissions:before,
+.text-align-center .icon-twfr-permissions:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-permissions.icon-two-color:after,
+.text-align-center .icon-twfr-permissions.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-formula:before,
+.text-align-center .icon-twfr-formula:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-link:before,
+.text-align-center .icon-twfr-link:before {
+  left: -0.05rem;
+}
+
+.no-text .icon-file-generic:before,
+.text-align-center .icon-file-generic:before {
+  left: 0.1rem;
+}
+
+.no-text .icon-file-import:before,
+.text-align-center .icon-file-import:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-file-import.icon-two-color:after,
+.text-align-center .icon-file-import.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-file-export:before,
+.text-align-center .icon-file-export:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-file-export.icon-two-color:after,
+.text-align-center .icon-file-export.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-file-workbook:before,
+.text-align-center .icon-file-workbook:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-file-copy:before,
+.text-align-center .icon-file-copy:before {
+  left: -0.05rem;
+}
+
+.no-text .icon-file-copy.icon-two-color:after,
+.text-align-center .icon-file-copy.icon-two-color:after {
+  left: -0.05rem;
+}
+
+.no-text .icon-file-validate:before,
+.text-align-center .icon-file-validate:before {
+  left: 0.1rem;
+}
+
+.no-text .icon-file-validate.icon-two-color:after,
+.text-align-center .icon-file-validate.icon-two-color:after {
+  left: 0.1rem;
+}
+
+.no-text .icon-file-new:before,
+.text-align-center .icon-file-new:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-file-new.icon-two-color:after,
+.text-align-center .icon-file-new.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-file:before,
+.text-align-center .icon-file:before {
+  left: 0.1rem;
+}
+
+.no-text .icon-file-dragndrop:before,
+.text-align-center .icon-file-dragndrop:before {
+  left: 0.1rem;
+}
+
+.no-text .icon-file-dragndrop-new:before,
+.text-align-center .icon-file-dragndrop-new:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-file-msexcel:before,
+.text-align-center .icon-file-msexcel:before {
+  left: 0.1rem;
+}
+
+.no-text .icon-file-msexcel.icon-two-color:after,
+.text-align-center .icon-file-msexcel.icon-two-color:after {
+  left: 0.1rem;
+}
+
+.no-text .icon-file-msword:before,
+.text-align-center .icon-file-msword:before {
+  left: 0.1rem;
+}
+
+.no-text .icon-file-msword.icon-two-color:after,
+.text-align-center .icon-file-msword.icon-two-color:after {
+  left: 0.1rem;
+}
+
+.no-text .icon-file-pdf:before,
+.text-align-center .icon-file-pdf:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-file-pdf.icon-two-color:after,
+.text-align-center .icon-file-pdf.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-file-link:before,
+.text-align-center .icon-file-link:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-file-link.icon-two-color:after,
+.text-align-center .icon-file-link.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-file-preview:before,
+.text-align-center .icon-file-preview:before {
+  left: 0.1rem;
+}
+
+.no-text .icon-file-preview.icon-two-color:after,
+.text-align-center .icon-file-preview.icon-two-color:after {
+  left: 0.1rem;
+}
+
+.no-text .icon-twfr-file-attachment:before,
+.text-align-center .icon-twfr-file-attachment:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-attachment.icon-two-color:after,
+.text-align-center .icon-twfr-file-attachment.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-validate:before,
+.text-align-center .icon-twfr-file-validate:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-validate.icon-two-color:after,
+.text-align-center .icon-twfr-file-validate.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-add:before,
+.text-align-center .icon-twfr-file-add:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-add.icon-two-color:after,
+.text-align-center .icon-twfr-file-add.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-preview:before,
+.text-align-center .icon-twfr-file-preview:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-preview.icon-two-color:after,
+.text-align-center .icon-twfr-file-preview.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-generic-add:before,
+.text-align-center .icon-twfr-file-generic-add:before {
+  left: 0.2rem;
+}
+
+.no-text .icon-twfr-file-generic-add.icon-two-color:after,
+.text-align-center .icon-twfr-file-generic-add.icon-two-color:after {
+  left: 0.2rem;
+}
+
+.no-text .icon-twfr-file-generic:before,
+.text-align-center .icon-twfr-file-generic:before {
+  left: 0.25rem;
+}
+
+.no-text .icon-twfr-file-image:before,
+.text-align-center .icon-twfr-file-image:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-image.icon-two-color:after,
+.text-align-center .icon-twfr-file-image.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-msexcel:before,
+.text-align-center .icon-twfr-file-msexcel:before {
+  left: 0.25rem;
+}
+
+.no-text .icon-twfr-file-msexcel.icon-two-color:after,
+.text-align-center .icon-twfr-file-msexcel.icon-two-color:after {
+  left: 0.25rem;
+}
+
+.no-text .icon-twfr-file-mspowerpoint:before,
+.text-align-center .icon-twfr-file-mspowerpoint:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-mspowerpoint.icon-two-color:after,
+.text-align-center .icon-twfr-file-mspowerpoint.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-msword:before,
+.text-align-center .icon-twfr-file-msword:before {
+  left: 0.15rem;
+}
+
+.no-text .icon-twfr-file-msword.icon-two-color:after,
+.text-align-center .icon-twfr-file-msword.icon-two-color:after {
+  left: 0.15rem;
+}
+
+.no-text .icon-twfr-file-pdf:before,
+.text-align-center .icon-twfr-file-pdf:before {
+  left: 0.2rem;
+}
+
+.no-text .icon-twfr-file-pdf.icon-two-color:after,
+.text-align-center .icon-twfr-file-pdf.icon-two-color:after {
+  left: 0.2rem;
+}
+
+.no-text .icon-twfr-file-certification:before,
+.text-align-center .icon-twfr-file-certification:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-book:before,
+.text-align-center .icon-twfr-file-book:before {
+  left: 0.2rem;
+}
+
+.no-text .icon-twfr-file:before,
+.text-align-center .icon-twfr-file:before {
+  left: 0.25rem;
+}
+
+.no-text .icon-twfr-file-draft:before,
+.text-align-center .icon-twfr-file-draft:before {
+  left: 0.2rem;
+}
+
+.no-text .icon-twfr-file-draft.icon-two-color:after,
+.text-align-center .icon-twfr-file-draft.icon-two-color:after {
+  left: 0.2rem;
+}
+
+.no-text .icon-twfr-file-project:before,
+.text-align-center .icon-twfr-file-project:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-presentation:before,
+.text-align-center .icon-twfr-file-presentation:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-workbook:before,
+.text-align-center .icon-twfr-file-workbook:before {
+  left: 0.15rem;
+}
+
+.no-text .icon-twfr-file-workbook-draft:before,
+.text-align-center .icon-twfr-file-workbook-draft:before {
+  left: 0.1rem;
+}
+
+.no-text .icon-twfr-file-workbook-draft.icon-two-color:after,
+.text-align-center .icon-twfr-file-workbook-draft.icon-two-color:after {
+  left: 0.1rem;
+}
+
+.no-text .icon-twfr-file-import:before,
+.text-align-center .icon-twfr-file-import:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-import.icon-two-color:after,
+.text-align-center .icon-twfr-file-import.icon-two-color:after {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-export:before,
+.text-align-center .icon-twfr-file-export:before {
+  left: 0.05rem;
+}
+
+.no-text .icon-twfr-file-export.icon-two-color:after,
+.text-align-center .icon-twfr-file-export.icon-two-color:after {
+  left: 0.05rem;
+}
+
+/*# sourceMappingURL=icons-halign.css.map */

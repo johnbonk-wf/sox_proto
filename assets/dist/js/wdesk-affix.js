@@ -1,0 +1,183 @@
+/* ==========================================================
+ * wdesk-affix.js v1.3.0 (http://bit.ly/15J47Ss)
+ * adapted from bootstrap-affix v3.3.2
+ * ===================================================
+ * Copyright 2015 Workiva and Twitter, Inc.
+ * ========================================================== */
+
+if (typeof define !== 'function') {
+    define = function(deps, module) {
+        module(window.jQuery);
+    };
+    define.isFake = true;
+}
+
+define(['jquery'],
+
+function($) {
+
+    'use strict';
+
+    // AFFIX CLASS DEFINITION
+    // ======================
+
+    var Affix = function(element, options) {
+        this.options = $.extend({}, Affix.DEFAULTS, options);
+        this.$window = $(window);
+        this.$scrollElement = this.options.scrollElement || this.$window;
+
+        this.$scrollElement
+            .on('scroll.wdesk.affix.data-api', $.proxy(this.checkPosition, this))
+            .on('click.wdesk.affix.data-api',  $.proxy(this.checkPositionWithEventLoop, this));
+
+        this.$element     = $(element);
+        this.affixed      = null;
+        this.unpin        = null;
+        this.pinnedOffset = null;
+
+        this.checkPosition();
+    };
+
+    if (typeof _ === 'undefined' || typeof jQuery === 'undefined') {
+        throw new Error('wdesk-affix.js requires wf-vendor.js');
+    }
+
+    Affix.VERSION = '1.3.0';
+
+    Affix.RESET = 'affix affix-top affix-bottom';
+
+    Affix.DEFAULTS = {
+        offset: 0
+    };
+
+    Affix.prototype.getPinnedOffset = function() {
+        if (this.pinnedOffset) {
+            return this.pinnedOffset;
+        }
+
+        this.$element
+            .removeClass(Affix.RESET)
+            .addClass('affix');
+
+        var scrollTop = this.$scrollElement.scrollTop();
+        var position  = this.$element.offset();
+        return (this.pinnedOffset = position.top - scrollTop);
+    };
+
+    Affix.prototype.checkPositionWithEventLoop = function() {
+        setTimeout($.proxy(this.checkPosition, this), 1);
+    };
+
+    Affix.prototype.checkPosition = function() {
+        if (!this.$element.is(':visible')) {
+            return;
+        }
+
+        var scrollHeight    = this.$scrollElement === this.$window ? $(document).height() : this.$scrollElement[0].scrollHeight;
+        var scrollTop       = this.$scrollElement.scrollTop();
+        var position        = this.$element.offset();
+        var offset          = this.options.offset;
+        var offsetTop       = offset.top;
+        var offsetBottom    = offset.bottom;
+
+        if (this.affixed == 'top') {
+            position.top += scrollTop;
+        }
+
+        if (typeof offset != 'object')          offsetBottom = offsetTop = offset;
+        if (typeof offsetTop == 'function')     offsetTop    = offset.top(this.$element);
+        if (typeof offsetBottom == 'function')  offsetBottom = offset.bottom(this.$element);
+
+        var affix = this.unpin      != null && (scrollTop + this.unpin <= position.top) ? false :
+                    offsetBottom    != null && (position.top + this.$element.height() >= scrollHeight - offsetBottom) ? 'bottom' :
+                    offsetTop       != null && (scrollTop <= offsetTop) ? 'top' : false;
+
+        if (this.affixed === affix) {
+            return;
+        }
+        if (this.unpin) {
+            this.$element.css('top', '');
+        }
+
+        var affixType = 'affix' + (affix ? '-' + affix : '');
+        var event     = $.Event(affixType + '.wdesk.affix');
+
+        this.$element.trigger(event);
+
+        if (event.isDefaultPrevented()) {
+            return;
+        }
+
+        this.affixed = affix;
+        this.unpin   = affix == 'bottom' ? this.getPinnedOffset() : null;
+
+        this.$element
+            .removeClass(Affix.RESET)
+            .addClass(affixType)
+            .trigger($.Event(affixType.replace('affix', 'affixed')));
+
+        if (affix == 'bottom') {
+            this.$element.offset({ top: scrollHeight - offsetBottom - this.$element.height() });
+        }
+    };
+
+
+    // AFFIX PLUGIN DEFINITION
+    // =======================
+
+    function Plugin(option) {
+        return this.each(function() {
+            var $this   = $(this);
+            var data    = $this.data('wdesk.affix');
+            var options = typeof option == 'object' && option;
+
+            if (!data) {
+                $this.data('wdesk.affix', (data = new Affix(this, options)));
+            }
+            if (typeof option == 'string') {
+                data[option]();
+            }
+        });
+    }
+
+    var old = $.fn.affix;
+
+    $.fn.affix             = Plugin;
+    $.fn.affix.Constructor = Affix;
+
+
+    // AFFIX NO CONFLICT
+    // =================
+
+    $.fn.affix.noConflict = function() {
+        $.fn.affix = old;
+        return this;
+    };
+
+
+    // AFFIX DATA-API
+    // ==============
+
+    $(window).on('load', function() {
+        $('[data-spy="affix"]').each(function() {
+            var $spy = $(this);
+            var data = $spy.data();
+
+            data.offset = data.offset || {};
+
+            if (data.offsetBottom) {
+                data.offset.bottom = data.offsetBottom;
+            }
+            if (data.offsetTop) {
+                data.offset.top = data.offsetTop;
+            }
+
+            Plugin.call($spy, data);
+        });
+    });
+
+});
+
+if (define.isFake) {
+    define = undefined;
+}

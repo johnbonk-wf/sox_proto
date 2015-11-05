@@ -1,0 +1,1294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+                                   initial-scale=1.0,
+                                   maximum-scale=1.0">
+    <meta name="description" content="Web Skin Style Guide Documentation">
+    <meta name="author" content="Aaron Lademann">
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    
+    <title>
+        
+            Wdesk Workspaces Example &middot; Web Skin Style Guide
+        
+    </title>
+    
+    
+    
+    <!--
+        STYLES
+    -->
+    
+    <link href="../../assets/dist/css/styles.css" rel="stylesheet">
+    <link href="../../assets/dist/css/web-skin.css?1.3.0" rel="stylesheet">
+    <link href="../../assets/dist/css/peripherals/grid-v2.css?1.3.0" rel="stylesheet">
+    <link href="../../assets/dist/css/peripherals/virtual-tables.css?1.3.0" rel="stylesheet">
+    
+    <link href="../../assets/dist/css/app.css" rel="stylesheet">
+    
+    
+    <!-- need this for components page (label bg-doctype variation table header toggles) -->
+    <link href="../../assets/dist/css/peripherals/form-toggle-switches.css?1.3.0" rel="stylesheet">
+    
+    
+    
+    
+    
+    
+    
+  
+    
+    <link href="../../assets/dist/css/peripherals/workspaces.css?1.3.0" rel="stylesheet">
+    
+    
+    <!--
+        SCRIPTS
+    -->
+    <script src="../../assets/dist/js/core/wf-js-vendor/dist/wf-vendor.dev.js?1.3.0"></script>
+    <!--[if lte IE 9]>
+    <script src="../../assets/dist/js/core/libs_ie.dev.js?1.3.0"></script>
+    <![endif]-->
+    <!--[if !IE]> -->
+    <script src="../../assets/dist/js/core/libs.dev.js?1.3.0"></script>
+    <!-- <![endif]-->
+    <script async src="../../assets/js/holder.js?1.3.0"></script>
+    <script async src="../../assets/js/web-skin-ga-tracker.js?1.3.0"></script>
+    
+    
+    <!--
+        IMAGE LINKS
+        (FAVICONS / APP ICONS / SPLASH SCREENS, ETC)
+    -->
+    
+    <!--
+        Google TV
+    -->
+    <link rel="icon" type="image/png" href="../../assets/dist/ico/favicon-196x196.png?1.3.0" sizes="196x196">
+    
+    <!--
+        Modern Browser Bookmark "Favicons"
+    -->
+    <link rel="icon" type="image/png" href="../../assets/dist/ico/favicon-160x160.png?1.3.0" sizes="160x160">
+    <link rel="icon" type="image/png" href="../../assets/dist/ico/favicon-96x96.png?1.3.0" sizes="96x96">
+    <link rel="icon" type="image/png" href="../../assets/dist/ico/favicon-16x16.png?1.3.0" sizes="16x16">
+    <link rel="icon" type="image/png" href="../../assets/dist/ico/favicon-32x32.png?1.3.0" sizes="32x32">
+    
+    <!--
+        Standard Browser Bookmark "Favicon"
+    -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/dist/ico/favicon.ico?1.3.0">
+    
+    <!--
+        App Icons (Android / iOS)
+    -->
+    <!-- For iPad w/ high-resolution Retina display on iOS ≥ 7: -->
+    <link rel="apple-touch-icon" sizes="152x152" href="../../assets/dist/ico/apple-touch-icon-152.png?1.3.0">
+    <!-- For iPad w/ high-resolution Retina display on iOS ≤ 6: -->
+    <link rel="apple-touch-icon" sizes="144x144" href="../../assets/dist/ico/apple-touch-icon-144.png?1.3.0">
+    <!-- For iPhone w/ high-resolution Retina display on iOS ≥ 7: -->
+    <link rel="apple-touch-icon" sizes="120x120" href="../../assets/dist/ico/apple-touch-icon-120.png?1.3.0">
+    <!-- For iPhone w/ high-resolution Retina display on iOS ≤ 6: -->
+    <link rel="apple-touch-icon" sizes="114x114" href="../../assets/dist/ico/apple-touch-icon-114.png?1.3.0">
+    <!-- For the iPad mini & the first/second-generation iPad on iOS ≥ 7: -->
+    <link rel="apple-touch-icon" sizes="76x76"   href="../../assets/dist/ico/apple-touch-icon-76.png?1.3.0">
+    <!-- For the iPad mini & the first/second-generation iPad on iOS ≤ 6: -->
+    <link rel="apple-touch-icon" sizes="72x72"   href="../../assets/dist/ico/apple-touch-icon-72.png?1.3.0">
+    <!-- For non-Retina iPhone, iPod Touch, & Android 2.1+ devices: -->
+    <link rel="apple-touch-icon" href="../../assets/dist/ico/apple-touch-icon-57.png?1.3.0">
+    
+    <!--
+        Win8 tiles
+    -->
+    <meta name="msapplication-TileImage" content="../../assets/dist/ico/mstile-144x144.png?1.3.0">
+    <meta name="msapplication-TileColor" content="#66CC00">
+    <meta name="application-name"        content="Web Skin">
+    
+    <!--
+        IE11 tiles
+    -->
+    <meta name="msapplication-square70x70logo"   content="../../assets/dist/ico/mstile-70x70.png?1.3.0">
+    <meta name="msapplication-square150x150logo" content="../../assets/dist/ico/mstile-150x150.png?1.3.0">
+    <meta name="msapplication-square310x310logo" content="../../assets/dist/ico/mstile-310x310.png?1.3.0">
+    <meta name="msapplication-wide310x150logo"   content="../../assets/dist/ico/mstile-310x150.png?1.3.0">
+    
+
+    <!-- Place anything custom after this. -->
+</head>
+<body class="page-workspaces">
+
+    <div class="grid-frame  wksp-frame">
+    <div class="grid-block grid-vertical">
+        <!-- <div class="grid-block grid-shrink">
+            { indent_include components/components-navbar-wdesk-example.html 0 notMarkup=true wideContainer=true className='navbar-static-top' style='margin-bottom: 0; width: 100%;' }
+        </div> -->
+        <div class="grid-block">
+            <div role="main" class="wksp-main  grid-block  grid-order-2  grid-gutter">
+                <div class="grid-block  grid-content">
+
+  
+  
+   
+<div class="grid-block grid-block-12 grid-wrap">
+   <div class="sox-title-header-block grid-block">
+       <div class="breadcrumb breadcrumb-header sox-title-header-breadcrumbs grid-block grid-block-12">
+           <div class="breadcrumb-item grid-block grid-shrink grid-content grid-collapse">
+               <a class="btn btn-lg sox-title-header-crumb sox-title-header-link btn-link" href="https://sox.wk-dev.wdesk.org/focus/Control">Control</a>
+            </div>
+            
+            <div class="breadcrumb-item active grid-block grid-content grid-collapse">
+                <div class="sox-title-header-crumb-flex-wrapper grid-block grid-block-12">
+                    <div class="btn btn-lg sox-title-header-crumb sox-title-header-input clip-text grid-block">Control Num 1</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+   
+
+   
+<div class="sox-focus-view-display grid-block grid-block-12">
+    <div class="grid-block grid-vertical" style="
+    background-color: white;
+    padding: 4rem 2rem 0rem 2rem;
+    margin-top: 1.5rem;">
+        <div role="form" class="clearfix form-horizontal sox-vertex-editor">
+            <div class="sox-vertex-editor-row row" style="margin-bottom: 2rem;">
+   
+
+   
+   
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Number:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-xs">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                        <input title="Number: Control Num 1" label="Number" 
+                                        class="sox-extended-input form-control form-control-static" type="text" readonly="" value="C.AP.01">
+                                    </div>
+
+                                    <div class="cte-block-btn-control">
+
+                                        <button title="Click to edit &quot;Number&quot;" tabindex="0" class="cte-edit-btn btn no-text" type="button">
+                                        <i class="sr-only">
+                                        <span>Edit </span>
+                                        <span>Number</span></i><i class="icon icon-pencil"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Name:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-xs">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                        <input title="Number: Control Num 1" label="Number" 
+                                        class="sox-extended-input form-control form-control-static" type="text" readonly="" value="Accounts Payable 01">
+                                    </div>
+
+                                    <div class="cte-block-btn-control">
+
+                                        <button title="Click to edit &quot;Number&quot;" tabindex="0" class="cte-edit-btn btn no-text" type="button">
+                                        <i class="sr-only">
+                                        <span>Edit </span>
+                                        <span>Number</span></i><i class="icon icon-pencil"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-12 col-xs-12">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Description:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-sm">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                        <textarea id="{{ textarea-id }}" class="form-control" rows="3" placeholder="Start typing...">All open POs are followed up on periodically by the Sr Supply Chain employee; if goods have been in fact received or services have been performed since prior review, the PO is closed. Director of Supply Chain reviews PO for PO#, Goods or services described in PO, dates and $ amount matches employee request.
+                                        </textarea>
+                                    </div>
+
+                                    <div class="cte-block-btn-control">
+
+                                        <button title="Click to edit &quot;Number&quot;" tabindex="0" class="cte-edit-btn btn no-text" type="button">
+                                        <i class="sr-only">
+                                        <span>Edit </span>
+                                        <span>Number</span></i><i class="icon icon-pencil"></i>
+                                        </button>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Frequency:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-sm">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                        <div role="group" class="btn-group dropdown">
+                                            <button type="button" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                                                Quarterly
+                                                <i class="caret" aria-hidden="true"></i>
+                                            </button>
+                                            <ul role="menu" class="dropdown-menu">
+                                                <li role="presentation" class="menu-item">
+                                                    <a role="menuitem" class="hitarea" tabindex="-1">Option 1</a>
+                                                </li>
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Type:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-sm">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                        <div role="group" class="btn-group dropdown">
+                                            <button type="button" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                                                Automatic
+                                                <i class="caret" aria-hidden="true"></i>
+                                            </button>
+                                            <ul role="menu" class="dropdown-menu">
+                                                <li role="presentation" class="menu-item">
+                                                    <a role="menuitem" class="hitarea" tabindex="-1">Option 1</a>
+                                                </li>
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Prev/Det:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-sm">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                        <div role="group" class="btn-group dropdown">
+                                            <button type="button" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                                                Preventive
+                                                <i class="caret" aria-hidden="true"></i>
+                                            </button>
+                                            <ul role="menu" class="dropdown-menu">
+                                                <li role="presentation" class="menu-item">
+                                                    <a role="menuitem" class="hitarea" tabindex="-1">Option 1</a>
+                                                </li>
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Key?:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-sm">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                        <div role="group" class="btn-group dropdown">
+                                            <button type="button" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                                                Yes
+                                                <i class="caret" aria-hidden="true"></i>
+                                            </button>
+                                            <ul role="menu" class="dropdown-menu">
+                                                <li role="presentation" class="menu-item">
+                                                    <a role="menuitem" class="hitarea" tabindex="-1">Option 1</a>
+                                                </li>
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Audit Rely?:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-sm">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                        <div role="group" class="btn-group dropdown">
+                                            <button type="button" class="btn btn-default dropdown-toggle" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown">
+                                                Yes
+                                                <i class="caret" aria-hidden="true"></i>
+                                            </button>
+                                            <ul role="menu" class="dropdown-menu">
+                                                <li role="presentation" class="menu-item">
+                                                    <a role="menuitem" class="hitarea" tabindex="-1">Option 1</a>
+                                                </li>
+                                            </ul>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Owned By:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-sm">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                    
+                                    
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Patrick Dahman</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Jade Robbins</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Scott Bacon</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Jason Erickson</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Robbie Lamb</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Patrick Dahman</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Jade Robbins</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Scott Bacon</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Jason Erickson</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Robbie Lamb</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">John Bonk</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Ephie Risho</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Alex Iselin</button>
+                                                </div>
+                                            </div>
+                                        </div>    
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Ephie Risho</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Alex Iselin</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Tested By:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-sm">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                    
+                                    
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Patrick Dahman</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Jade Robbins</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Scott Bacon</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Jason Erickson</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Robbie Lamb</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">John Bonk</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Ephie Risho</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Alex Iselin</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Documented By:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-sm">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                    
+                                    
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">ABC Company - Process Narrative</button>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">ABC Company - Process Flowchart</button>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Maps To:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-sm">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                    
+                                    
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Principle 1 - Demonstrates commitment to integrity and ethical values</button>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="sox-well-capsule-bottle grid-block grid-block-6 grid-wrap" style="display: inline-block;">
+
+                                            <div class="sox-well-capsule-xr grid-block grid-content grid-collapse-top grid-collapse-bottom grid-collapse-left">
+
+                                                <div class="sox-btn-capsule sox-focus-view-capsule dropdown btn-group btn-group-split">
+
+                                                    <button class="sox-btn-capsule sox-focus-view-capsule btn btn-light" type="button">Principle 2 - Demonstrates commitment to fiscal responsibility</button>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                <div class="sox-vertex-editor-column col-lg-12 col-sm-6 col-xs-6">
+                    <div class="sox-vertex-prop-editor cte-group-wrapper">
+                        <div title="Double click to begin editing &quot;Number&quot;." class="form-group cte-group">
+                            <label class="control-label clip-text grid-block-xs">
+                                <span>Mitigates:</span>
+                            </label>
+
+                            <div class="cte-block-controls-wrapper grid-block-sm">
+                                <div class="cte-block-controls">
+                                    <div class="cte-block-input-control">
+                                        <table class="sox-well-table table-fixed table table-bordered table-hover">
+                                            <thead>
+                                                <trcurs>
+                                                    <th scope="col">Error Occurs</th>
+                                                    <th scope="col">In Process</th>
+                                                    <th scope="col">Invalidates</th>
+                                                    <th scope="col">On Line</th>
+                                                    <th scope="col" class="col-cbox"/th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr class="sox-well-table-row">
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">Risk Title 1</a></td>
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">Process A</a></td>
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">P&D</a></td>
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">Raw Material</a></td>
+                                                    <td class="col-cbox"><i class="sox-well-table-icon pointer icon icon-data-focus"></i></td>
+                                                </tr>
+                                                <tr class="sox-well-table-row">
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">Risk Title 2</a></td>
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">Process B</a></td>
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">R&O</a></td>
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">Corporate Accounts</a></td>
+                                                    <td class="col-cbox"><i class="sox-well-table-icon pointer icon icon-data-focus"></i></td>
+                                                </tr>
+                                                <tr class="sox-well-table-row">
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">Risk Title 3</a></td>
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">Process C</a></td>
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">C</a></td>
+                                                    <td class="sox-well-table-cell"><a class="sox-well-table-pill">Income Tax Expense Benefit</a></td>
+                                                    <td class="col-cbox"><i class="sox-well-table-icon pointer icon icon-data-focus"></i></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            
+            
+            
+            
+
+            </div>
+        </div>
+    </div>
+</div>
+                    
+</div>
+            </div>
+<div class="wksp-sidebar  wksp-sidebar-left  wksp-sidebar-hoverable  grid-order-1">
+                    <div class="grid-reset">
+                        <div class="grid-block  grid-vertical">
+                            <div class="wksp-sidebar-masthead  wksp-sidebar-masthead-left  wksp-sidebar-content-block  grid-shrink">
+                                <div class="wksp-sidebar-content-block  wksp-sidebar-masthead-brand">
+                                    <div class="brand-img-wrapper">
+                                        <div class="brand-img brand-symbol" role="img" aria-hidden="true"></div>
+                                        <div class="brand-img brand-logo" role="img" aria-hidden="true"></div>
+                                    </div>
+                                    <div class="wksp-sidebar-min-max-control-wrapper">
+                                        <button type="button" class="hitarea sidebar-toggle">
+                                            <span class="flip-container">
+                                            <span class="flipper">
+                                                <span class="front-side">
+                                                    <i class="icon icon-chevron-double-right"></i>
+                                                </span>
+                                            <span class="back-side">
+                                                    <i class="icon icon-chevron-double-left"></i>
+                                                </span>
+                                            </span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="wksp-sidebar-content-block  wksp-sidebar-masthead-create">
+                                    <div class="grid-block grid-wrap">
+                                        <div class="wksp-create-btn-wrapper">
+                                            <button type="button" id="wksp-create-btn" class="btn btn-block btn-flat  wksp-hitarea-circle  wksp-create-btn  wksp-sidebar-btn-primary  hitarea-16" title="Create" data-toggle="popover" data-placement="bottom auto" data-content-container="temporary" data-content="#temp-create-menu-content" data-auto-width="true">
+                                                <div class="grid-block">
+                                                    <!-- Use three grid-blocks to center the icon and the text together -->
+                                                    <div class="grid-block"></div>
+                                                    <div class="grid-block  wksp-create-btn-label-wrapper">
+                                                        <i class="icon icon-plus align-left  hitarea-icon" aria-hidden="true"></i>
+                                                        <i class="wksp-hitarea-label" aria-disabled="true">Create</i>
+                                                    </div>
+                                                    <div class="grid-block"></div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                        
+                                    </div>
+
+                                    <div class="hide" aria-hidden="true" id="temp-create-menu-content">
+                                        <div role="menu" class="dropdown-menu  dropdown-menu-md">
+                                            <div role="presentation" class="menu-item hide">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-sox-report icon-two-color" aria-hidden="true"></i> Report
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file icon-color" aria-hidden="true"></i> Document
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-workbook icon-color" aria-hidden="true"></i> Workbook
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-datacollections icon-color" aria-hidden="true"></i> Data Collection
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-presentation icon-color" aria-hidden="true"></i> Presentation
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-book icon-color" aria-hidden="true"></i> Binder
+                                                </button>
+                                            </div>
+                                            <div role="separator" class="menu-item divider"></div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-sox-report icon-two-color" aria-hidden="true"></i> Report
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-database icon-two-color" aria-hidden="true"></i> Data Type
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-workbook" aria-hidden="true"></i> Data Template
+                                                </button>
+                                            </div>
+                                            <div role="separator" class="menu-item divider"></div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-project icon-color" aria-hidden="true"></i> Project
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-folder icon-color" aria-hidden="true"></i> Folder
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hide" aria-hidden="true" id="temp-create-import-menu-content">
+                                        <div role="menu" class="dropdown-menu  dropdown-menu-md">
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-folder-zip icon-two-color" aria-hidden="true"></i> Document or Project
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-mspowerpoint icon-two-color" aria-hidden="true"></i> Powerpoint (.pptx)
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-msword icon-two-color" aria-hidden="true"></i> Word (.docx)
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-sec-sign-outline icon-two-color" aria-hidden="true"></i> From SEC
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-workbook" aria-hidden="true"></i> Data Template
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="wksp-sidebar-body  wksp-sidebar-body-left  wksp-sidebar-content-block">
+                                <div role="tablist" id="wksp-left-nav-panels" class="wksp-pill-panel-container" aria-multiselectable="true">
+                                    <div role="presentation" class="panel-group  nav  nav-pills  nav-stacked  wksp-sidebar-nav  wksp-nav-pills">
+
+
+                                        <!--
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="recent_heading" class="panel-heading  hitarea  pill-link-hover" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="recent" data-target="#recent" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-recently-updated hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">My Recent</i>
+                                            </div>
+                                            <div id="recent" class="panel panel-collapse collapse  hide" tabindex="-1" aria-hidden="true" aria-labelledby="reports_heading">
+                                                <div class="panel-body">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        -->
+
+
+                                        <!--
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="tasks_heading" class="panel-heading  hitarea  pill-link-hover" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="tasks" data-target="#tasks" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-task-create hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">Tasks</i>
+                                            </div>
+                                            <div id="tasks" class="panel panel-collapse collapse  hide" tabindex="-1" aria-hidden="true" aria-labelledby="reports_heading">
+                                                <div class="panel-body">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        -->
+
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="reports_heading" class="panel-heading  hitarea  pill-link-hover" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="reports" data-target="#reports" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-file-sox-report  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">Reports</i>
+                                            </div>
+                                            <div id="reports" class="panel panel-collapse collapse  hide" tabindex="-1" aria-hidden="true" aria-labelledby="reports_heading">
+                                                <div class="panel-body">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="tasks_heading" class="panel-heading  hitarea  pill-link-hover" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="dashboard" data-target="#dashboard" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-dashboard hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">Dashboards</i>
+                                            </div>
+                                            <div id="dashboard" class="panel panel-collapse collapse  hide" tabindex="-1" aria-hidden="true" aria-labelledby="reports_heading">
+                                                <div class="panel-body">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="data_heading" class="panel-heading  hitarea  pill-link-hover  wksp-pill-panel-is-collapsible open" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="data" data-target="#data" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-database  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">Data</i>
+                                            </div>
+                                            <div id="data" class="panel panel-collapse collapse in" tabindex="-1" aria-hidden="true" aria-labelledby="data_heading">
+                                                <div class="panel-body">
+                                                    <div class="nav  nav-pills  nav-stacked  wksp-nav-pills">
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Assertion</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Business Unit</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">   
+                                                            <a role="button" href="index.html" class="hitarea  pill-link-hover active">Control</a>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Entity</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Flow Chart</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Grouping</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Line Item</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Location</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Person</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Process</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Region</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Risk</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="documents_heading" class="panel-heading  hitarea  pill-link-hover  wksp-pill-panel-is-collapsible" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="documents" data-target="#documents" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-folder  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">Documents</i>
+                                            </div>
+                                            <div id="documents" class="panel panel-collapse collapse" tabindex="-1" aria-hidden="true" aria-labelledby="documents_heading">
+                                                <div class="panel-body">
+                                                    <div class="nav  nav-pills  nav-stacked  wksp-nav-pills">
+                                                       <div role="presentation" class="nav-item">
+                                                            <a role="button" href="sox-home-1a.html" class="hitarea  pill-link-hover">
+                                                                My Recent
+                                                            </a>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <a role="button" href="sox-home-1b.html" class="hitarea  pill-link-hover">
+                                                                Projects
+                                                            </a>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <a role="button" href="sox-home-1c.html" class="hitarea  pill-link-hover">
+                                                                ABC Company
+                                                            </a>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item sub-item">
+                                                            <a role="button" href="sox-home-1d.html" class="hitarea  pill-link-hover">
+                                                                SOX
+                                                            </a>
+                                                        </div>
+
+                                                        <div role="presentation" class="nav-item">
+                                                                <button type="button" class="hitarea  pill-link-hover">
+                                                                    Trash
+                                                                </button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wksp-sidebar-footer  wksp-sidebar-footer-left  wksp-sidebar-content-block  grid-shrink">
+                                <ul role="group" class="nav  nav-pills  nav-stacked  wksp-sidebar-nav  wksp-nav-pills">
+                                    <li role="presentation" class="nav-item">
+                                        <button type="button" id="wksp-user-profile-btn" class="hitarea  pill-link-hover  wksp-hitarea-circle" data-toggle="popover" data-placement="top auto" data-content-container="temporary" data-content="#temp-user-profile-menu-content" data-auto-width="true">
+                                            <i class="icon icon-twfr-user-profile  hitarea-icon" aria-hidden="true"></i>
+                                            <i class="wksp-hitarea-label" aria-disabled="true">
+                                            <i class="user-name">Test User</i>
+                                            </i>
+                                        </button>
+
+                                        <div class="hide" aria-hidden="true" id="temp-user-profile-menu-content">
+                                            <div role="menu" class="dropdown-menu  dropdown-menu-md" aria-labelledby="wksp-user-profile-btn">
+                                                <div role="separator" class="menu-item  dropdown-info">
+                                                    <h5 class="dropdown-header">Account</h5>
+                                                    <ul class="list-unstyled">
+                                                        <li title="ABC Company Account">
+                                                            ABC Company
+                                                        </li>
+                                                    </ul>
+                                                    <h5 class="dropdown-header">Last Login</h5>
+                                                    <ul class="list-unstyled">
+                                                        <li title="March 3, 2008, 4:21 PM | Ames, IA | IP: 65.113.109.54">
+                                                            3 hours ago, Ames, IA
+                                                        </li>
+                                                        <li title="Jan 20, 2007, 7:30 PM | Minneapolis, MN | IP: 65.11.254.157">
+                                                            Jan 20, Minneapolis, MN
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#profile">
+                                                    My Profile
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#switch-account">
+                                                    Switch Account
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#sign-out">
+                                                    Sign Out
+                                                </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li role="presentation" class="nav-item">
+                                        <button type="button" id="wksp-user-profile-btn" class="hitarea  pill-link-hover  wksp-hitarea-circle" data-toggle="popover" data-placement="top auto" data-content-container="temporary" data-content="#temp-admin-menu-content" data-auto-width="true">
+                                            <i class="icon icon-twfr-cog  hitarea-icon" aria-hidden="true"></i>
+                                            <i class="wksp-hitarea-label" aria-disabled="true">
+                                            <i class="user-name">Admin</i>
+                                            </i>
+                                        </button>
+
+                                        <div class="hide" aria-hidden="true" id="temp-admin-menu-content">
+                                            <div role="menu" class="dropdown-menu  dropdown-menu-md" aria-labelledby="wksp-user-profile-btn">
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#user-admin">User Admin</a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#group-admin">Group Admin</a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#group-admin">Content Admin</a>
+                                                </div>
+                                                <div role="separator" class="menu-item  divider"></div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#group-admin">Certifications Admin</a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#group-admin">Binders Admin</a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#group-admin">Section 16 Admin</a>
+                                                </div>
+                                                <div role="separator" class="menu-item  divider"></div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#security">Security Settings</a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#sign-out">Account Settings</a>
+                                                </div>
+                                                <div role="separator" class="menu-item  divider"></div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#sign-out">Activity</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                    <li role="presentation" class="nav-item  global-community">
+                                        <button type="button" id="wksp-help-btn" class="hitarea  pill-link-hover  pill-link-help-hover  wksp-hitarea-circle" data-toggle="popover" data-placement="top auto" data-content-container="temporary" data-content="#temp-help-menu-content" data-auto-width="true">
+                                            <i class="icon icon-twfr-help-sign  hitarea-icon" aria-hidden="true"></i>
+                                            <i class="wksp-hitarea-label" aria-disabled="true">
+                                            Help
+                                        </i>
+                                        </button>
+
+                                        <div class="hide" aria-hidden="true" id="temp-help-menu-content">
+                                            <div role="menu" class="dropdown-menu  dropdown-menu-md" aria-labelledby="wksp-help-btn">
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#help">
+                                                    Help
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#explore">
+                                                    Explore
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#community">
+                                                    Community
+                                                </a>
+                                                </div>
+                                                <div role="separator" class="menu-item  divider"></div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#about">
+                                                    About Wdesk
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#new-features">
+                                                    New Features
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#contact-support">
+                                                    Contact Support
+                                                </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wksp-sidebar  wksp-sidebar-minimized  wksp-sidebar-right  wksp-sidebar-hoverable  grid-order-3">
+                    <div class="grid-reset">
+                        <div class="grid-block  grid-vertical">
+                            <div class="wksp-sidebar-masthead  wksp-sidebar-masthead-right  wksp-sidebar-content-block  grid-shrink  hide-border">
+                                <div class="wksp-sidebar-min-max-control-wrapper">
+                                    <button type="button" class="hitarea sidebar-toggle">
+                                        <span class="flip-container">
+                                        <span class="flipper">
+                                            <span class="front-side">
+                                                <i class="icon icon-chevron-double-right"></i>
+                                            </span>
+                                        <span class="back-side">
+                                                <i class="icon icon-chevron-double-left"></i>
+                                            </span>
+                                        </span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="wksp-sidebar-body  wksp-sidebar-body-right  wksp-sidebar-content-block">
+                                <div class="tabbable tabs-right">
+                                    <ul role="tablist" class="nav  nav-pills  nav-stacked  wksp-sidebar-nav  wksp-nav-pills">
+                                        <li role="presentation" class="nav-item">
+                                            <button role="tab" type="button" id="filters-tab" class="hitarea  hitarea-16  pill-link-hover" aria-selected="false" aria-controls="filters" data-target="#filters" data-toggle="tab">
+                                                <i class="icon icon-filter-outline  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true" tabindex="-1">Filters</i>
+                                            </button>
+                                        </li>
+                                        <li role="presentation" class="nav-item">
+                                            <button role="tab" type="button" id="comments-tab" class="hitarea  hitarea-16  pill-link-hover" aria-selected="false" aria-controls="comments" data-target="#comments" data-toggle="tab">
+                                                <i class="icon icon-comment-outline  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true" tabindex="-1">Comments</i>
+                                            </button>
+                                        </li>
+                                        <li role="presentation" class="nav-item">
+                                            <button role="tab" type="button" id="links-tab" class="hitarea  hitarea-16  pill-link-hover" aria-selected="false" aria-controls="links" data-target="#links" data-toggle="tab">
+                                                <i class="icon icon-link  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true" tabindex="-1">Links</i>
+                                            </button>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <div role="tabpanel" id="filters" tabindex="-1" class="tab-pane" aria-hidden="true" aria-labelledby="filters-tab">
+                                            Filters Content
+                                        </div>
+                                        <div role="tabpanel" id="comments" tabindex="-1" class="tab-pane" aria-hidden="true" aria-labelledby="comments-tab">
+                                            Comments Content
+                                        </div>
+                                        <div role="tabpanel" id="links" tabindex="-1" class="tab-pane" aria-hidden="true" aria-labelledby="links-tab">
+                                            Links Content
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+<script src="../../assets/js/workspaces/workspaces-demo.js?1.3.0"></script>
+
+
+
+    <!-- JS and analytics only. -->
+        
+    
+    
+    <!-- Web Skin core JavaScript
+    ================================================== -->
+    <script src="../../assets/dist/js/web-skin.dev.js?1.3.0"></script>
+    
+    
+    
+    
+
+
+
+</body>
+</html>

@@ -1,0 +1,11 @@
+/*!
+ * -------------------------------------
+ * Web Skin Peripheral CSS for "Tour" Popovers
+ * ---
+ * Requires
+ *   web-skin Core CSS
+ *   web-skin btn-outlines CSS peripheral
+ * ---
+ * Copyright 2015 Workiva
+ * -------------------------------------
+ */.popover-tour{border-color:#026dce!important;background-color:#026dce!important;color:#fff}.popover-tour .title{color:#fff}.popover-tour .inner{background-color:#026dce!important;max-width:none}.popover-tour.top .arrow,.popover-tour.top .arrow:after{border-top-color:#026dce}.popover-tour.right .arrow,.popover-tour.right .arrow:after{border-right-color:#026dce}.popover-tour.bottom .arrow,.popover-tour.bottom .arrow:after{border-bottom-color:#026dce}.popover-tour.left .arrow,.popover-tour.left .arrow:after{border-left-color:#026dce}.popover-tour .btn-outline{color:#fff;border-color:#fff;background-color:transparent}.popover-tour .btn-outline:focus,.popover-tour .btn-outline:hover{color:#0255a1;border-color:#fff;background-color:#fff;text-decoration:none}.open .popover-tour .btn-outline.dropdown-toggle,.popover-tour .btn-outline.active,.popover-tour .btn-outline:hover:active{color:#0260b5;border-color:#fff;background-color:#fff}.popover-tour .btn-outline.disabled,.popover-tour .btn-outline[disabled],fieldset[disabled] .popover-tour .btn-outline{box-shadow:none;background-color:transparent!important;border-color:#fff!important;color:#fff!important;-ms-filter:"alpha(Opacity=45)"!important;opacity:.45!important;outline:0!important}.open .popover-tour .btn-outline.disabled.dropdown-toggle,.open .popover-tour .btn-outline[disabled].dropdown-toggle,.open fieldset[disabled] .popover-tour .btn-outline.dropdown-toggle,.popover-tour .btn-outline.disabled.active,.popover-tour .btn-outline.disabled:hover:active,.popover-tour .btn-outline[disabled].active,.popover-tour .btn-outline[disabled]:hover:active,fieldset[disabled] .popover-tour .btn-outline.active,fieldset[disabled] .popover-tour .btn-outline:hover:active{top:0!important}.popover-tour .page-indicators{margin:1.6rem auto 2rem}.popover-tour p+.page-indicators{margin-top:.6rem}.popover-tour-actions{float:left;width:100%}

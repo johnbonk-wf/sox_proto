@@ -1,0 +1,13 @@
+@charset "UTF-8";/*!
+ * -------------------------------------
+ * Web Skin Peripheral CSS for XBRL Icons
+ * ---
+ * MSIE Support: 8
+ * Touch UI Support: false
+ * ---
+ * Requires
+ *   web-skin Core CSS for MSIE 8
+ * ---
+ * Copyright 2015 Workiva
+ * -------------------------------------
+ */.icon-xbrl-flagged-sign:before{content:""}.icon-xbrl-replace-extension:before{content:""}.icon-xbrl-replace-extension.icon-two-color:after{content:"";color:#0094ff!important}.icon-xbrl-mixed-sign:before{content:""}.icon-xbrl-concept-extension:before{content:""}.icon-xbrl-concept-extension.icon-two-color:before{color:#0094ff}.icon-xbrl-concept-extension.icon-two-color:after{content:"";color:#fbad17!important}.icon-xbrl-concept:before{content:""}.icon-xbrl-concept.icon-color:before{color:#0094ff}.icon-xbrl-member-extension:before{content:""}.icon-xbrl-member-extension.icon-two-color:before{color:#0094ff}.icon-xbrl-member-extension.icon-two-color:after{content:"";color:#fbad17!important}.icon-xbrl-member:before{content:""}.icon-xbrl-member.icon-color:before{color:#0094ff}.icon-xbrl-outline-abstract-extension:before{content:""}.icon-xbrl-outline-abstract-extension.icon-two-color:before{color:#0094ff}.icon-xbrl-outline-abstract-extension.icon-two-color:after{content:"";color:#fbad17!important}.icon-xbrl-outline-abstract:before{content:""}.icon-xbrl-outline-abstract.icon-color:before{color:#0094ff}.icon-xbrl-outline-axis-extension:before{content:""}.icon-xbrl-outline-axis-extension.icon-two-color:before{color:#0094ff}.icon-xbrl-outline-axis-extension.icon-two-color:after{content:"";color:#fbad17!important}.icon-xbrl-outline-axis:before{content:""}.icon-xbrl-outline-axis.icon-color:before{color:#0094ff}.icon-xbrl-outline-domain-extension:before{content:""}.icon-xbrl-outline-domain-extension.icon-two-color:before{color:#0094ff}.icon-xbrl-outline-domain-extension.icon-two-color:after{content:"";color:#fbad17!important}.icon-xbrl-outline-domain:before{content:""}.icon-xbrl-outline-domain.icon-color:before{color:#0094ff}.icon-xbrl-outline-table-extension:before{content:""}.icon-xbrl-outline-table-extension.icon-two-color:before{color:#0094ff}.icon-xbrl-outline-table-extension.icon-two-color:after{content:"";color:#fbad17!important}.icon-xbrl-outline-table:before{content:""}.icon-xbrl-outline-table.icon-color:before{color:#0094ff}.icon-tab-xbrl-blacklines:before{content:""}.icon-xbrl-compare:before{content:""}.icon-xbrl-compare.icon-two-color:before{color:#8a8a8a}.icon-xbrl-compare.icon-two-color:after{content:"";color:#e3e3e3!important}.icon-tab-xbrl-severity:before{content:"";top:-.05rem}.icon-xbrl:before{content:""}.icon-xbrl.icon-two-color:after{content:"";color:#acacac!important}

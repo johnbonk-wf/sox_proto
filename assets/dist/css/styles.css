@@ -1,0 +1,41 @@
+.sub-item {
+    margin-left: 20px;
+}
+
+.subsub-item {
+    margin-left: 40px;
+}
+
+#list-group-tree-content {
+    background-color: #fff;
+    border-radius: 4px;
+}
+
+.grid-content {
+
+}
+
+.grid-gutter {
+    padding: 0 4em;
+}
+
+.breadcrumb {
+    background: inherit;
+}
+
+.masthead-row {
+    margin:10px;
+}
+
+.wksp-create-import-btn-wrapper {
+
+}
+
+.menu-item .checkbox{
+    margin:0;
+    margin-left:10px
+}
+
+.nav-item .hitarea {
+    padding-top: .4rem !important;
+}

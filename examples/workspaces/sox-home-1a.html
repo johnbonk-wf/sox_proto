@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Meta, title, CSS, favicons, etc. -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,
+                                   initial-scale=1.0,
+                                   maximum-scale=1.0">
+    <meta name="description" content="SOX + Home">
+    <meta name="author" content="Aaron Lademann">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+    <title>
+
+        SOX + HOME
+
+    </title>
+
+
+
+<!--
+        STYLES
+    -->
+    <link href="../../assets/dist/css/web-skin.css?1.3.0" rel="stylesheet">
+    <link href="../../assets/dist/css/peripherals/grid-v2.css?1.3.0" rel="stylesheet">
+    <link href="../../assets/dist/css/peripherals/virtual-tables.css?1.3.0" rel="stylesheet">
+    
+    <link href="../../assets/dist/css/app.css" rel="stylesheet">
+    
+    
+    <!-- need this for components page (label bg-doctype variation table header toggles) -->
+    <link href="../../assets/dist/css/peripherals/form-toggle-switches.css?1.3.0" rel="stylesheet">
+    
+    
+    <link href="../../assets/dist/css/peripherals/workspaces.css?1.3.0" rel="stylesheet">
+    <!-- Prototype hacks -->
+    <link href="../../assets/dist/css/styles.css" rel="stylesheet">
+
+    <!--
+        SCRIPTS
+    -->
+    <script src="../../assets/dist/js/core/wf-js-vendor/dist/wf-vendor.dev.js?1.3.0"></script>
+    <!--[if lte IE 9]>
+    <script src="../../assets/dist/js/core/libs_ie.dev.js?1.3.0"></script>
+    <![endif]-->
+    <!--[if !IE]> -->
+    <script src="../../assets/dist/js/core/libs.dev.js?1.3.0"></script>
+    <!-- <![endif]-->
+    <script async src="../../assets/js/holder.js?1.3.0"></script>
+    <script async src="../../assets/js/web-skin-ga-tracker.js?1.3.0"></script>
+   
+   
+   
+   
+    <!--
+        IMAGE LINKS
+        (FAVICONS / APP ICONS / SPLASH SCREENS, ETC)
+    -->
+    
+    <!--
+        Google TV
+    -->
+    <link rel="icon" type="image/png" href="../../assets/dist/ico/favicon-196x196.png?1.3.0" sizes="196x196">
+    
+    <!--
+        Modern Browser Bookmark "Favicons"
+    -->
+    <link rel="icon" type="image/png" href="../../assets/dist/ico/favicon-160x160.png?1.3.0" sizes="160x160">
+    <link rel="icon" type="image/png" href="../../assets/dist/ico/favicon-96x96.png?1.3.0" sizes="96x96">
+    <link rel="icon" type="image/png" href="../../assets/dist/ico/favicon-16x16.png?1.3.0" sizes="16x16">
+    <link rel="icon" type="image/png" href="../../assets/dist/ico/favicon-32x32.png?1.3.0" sizes="32x32">
+    
+    <!--
+        Standard Browser Bookmark "Favicon"
+    -->
+    <link rel="shortcut icon" type="image/x-icon" href="../../assets/dist/ico/favicon.ico?1.3.0">
+</head>
+
+<body class="page-workspaces">
+
+    <div class="grid-frame  wksp-frame">
+        <div class="grid-block grid-vertical">
+            <!-- <div class="grid-block grid-shrink">
+            { indent_include components/components-navbar-wdesk-example.html 0 notMarkup=true wideContainer=true className='navbar-static-top' style='margin-bottom: 0; width: 100%;' }
+        </div> -->
+            <div class="grid-block">
+                <div role="main" class="wksp-main grid-block grid-order-2 grid-gutter">
+                    <div class="grid-block grid-content">
+                        <div class="masthead-row grid-block grid-shrink grid-collapse-horizontal grid-wrap">
+                            <div class="grid-block grid-block-12 grid-wrap">
+                                <div class="sox-title-header-block grid-block">
+                                        <div class="breadcrumb breadcrumb-header grid-block grid-block-12">
+                                            <div content="true" class="breadcrumb-item active grid-block grid-content grid-collapse">
+                                                ABC Company
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="grid-block grid-shrink grid-content grid-collapse" content="true">
+                                    <div role="toolbar" class="btn-toolbar">
+                                        <button type="button" class="btn btn-vertical">
+                                            <i class="icon icon-twfr-permissions icon-two-color" aria-hidden="true"></i>
+                                            <small class="btn-label-sm">Permissions</small>
+                                        </button>
+                                        <button type="button" class="btn btn-vertical">
+                                            <i class="icon icon-twfr-folder-move icon-two-color" aria-hidden="true"></i>
+                                            <small class="btn-label-sm">Move</small>
+                                        </button>
+                                        <button type="button" class="btn btn-vertical">
+                                            <i class="icon icon-twfr-trash" aria-hidden="true"></i>
+                                            <small class="btn-label-sm">Delete</small>
+                                        </button>
+                                        <div role="search" class="input-group input-group-search">
+                                            <label for="search" class="sr-only">Search...</label>
+                                            <span class="input-group-addon input-group-search-addon-search">
+                                                <i class="icon icon-search" aria-hidden="true"></i>
+                                            </span>
+                                            <input type="search" id="search" class="form-control" placeholder="Search...">
+                                            <span class="input-group-btn input-group-search-btn-clear">
+                                                <button type="button" aria-hidden="true" class="btn" title="Clear Search">
+                                                    <i class="sr-only">Clear Search</i>
+                                                    <i aria-hidden="true">&times;</i>
+                                                </button>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="list-group-tree-content" class="">
+                            <div class="table-responsive" style="overflow-y: ">
+                                <table class="table  table-hover table-sortable table-selectable table-bordered-horizontal table-example-file-data-grid table-col-size-demo example-rounded-corner-table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col" class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content">&nbsp;</label>
+                                                </div>
+                                            </th>
+                                            <th scope="col" class="col-name">Name</th>
+                                            <th scope="col" class="col-type">Type</th>
+                                            <th scope="col" class="col-date">Last Modified</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    
+                                      
+                                      
+                                       <tr data-folder-key="workiva_hr-team_group-1_" data-ng-click="selectRow()" data-is-project="false" data-is-recent="true">
+                                            <td class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content1" data-cbox-group="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content1">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="icon icon-color icon-two-color icon-twfr-file"></i>
+                                                <span class="clip-text-inline">Cash Disbursements - Narrative</span>
+                                            </td>
+                                            <td><i class="label bg-doctype-blue">Narrative</i></td>
+                                            <td>Today at 10:03 AM</td>
+                                        </tr>
+                                        <tr data-folder-key="workiva_hr-team_group-1_" data-ng-click="selectRow()" data-is-project="false" data-is-recent="true">
+                                            <td class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content2" data-cbox-group="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content2">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="icon icon-color icon-two-color icon-twfr-file-pdf"></i>
+                                                <span class="clip-text-inline">Cash Disbursements - Narrative (Audit Export)</span>
+                                            </td>
+                                            <td><i class="label bg-doctype-gray">PDF</i></td>
+                                            <td>Today at 10:03 AM</td>
+                                        </tr>
+                                        <tr data-folder-key="workiva_hr-team_group-1_" data-ng-click="selectRow()" data-is-project="false" data-is-recent="false">
+                                            <td class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content3" data-cbox-group="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content3">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="icon icon-color icon-two-color icon-twfr-file-presentation"></i>
+                                                <span class="clip-text-inline">Cash Disbursements - FlowChart</span>
+                                            </td>
+                                            <td><i class="label bg-doctype-orange">Flowchart</i></td>
+                                            <td>Today at 9:28 AM</td>
+                                        </tr>
+                                       
+                                        <tr data-folder-key="workiva_hr-team_group-1_" data-ng-click="selectRow()" data-is-project="false" data-is-recent="true">
+                                            <td class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content1" data-cbox-group="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content1">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="icon icon-color icon-two-color icon-twfr-file"></i>
+                                                <span class="clip-text-inline">Accounts Receivable - Narrative</span>
+                                            </td>
+                                            <td><i class="label bg-doctype-blue">Narrative</i></td>
+                                            <td>Today at 8:40 AM</td>
+                                        </tr>
+                                        <tr data-folder-key="workiva_hr-team_group-1_" data-ng-click="selectRow()" data-is-project="false" data-is-recent="true">
+                                            <td class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content2" data-cbox-group="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content2">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="icon icon-color icon-two-color icon-twfr-file-pdf"></i>
+                                                <span class="clip-text-inline">Accounts Receivable - Narrative (Audit Export)</span>
+                                            </td>
+                                            <td><i class="label bg-doctype-gray">PDF</i></td>
+                                            <td>Today at 8:40 AM</td>
+                                        </tr>
+                                        <tr data-folder-key="workiva_hr-team_group-1_" data-ng-click="selectRow()" data-is-project="false" data-is-recent="false">
+                                            <td class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content3" data-cbox-group="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content3">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="icon icon-color icon-two-color icon-twfr-file-presentation"></i>
+                                                <span class="clip-text-inline">Accounts Receivable - FlowChart</span>
+                                            </td>
+                                            <td><i class="label bg-doctype-orange">Flowchart</i></td>
+                                            <td>Today at 8:16 AM</td>
+                                        </tr>
+                                   
+                                        <tr data-folder-key="workiva_hr-team_group-1_" data-ng-click="selectRow()" data-is-project="false" data-is-recent="true">
+                                            <td class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content1" data-cbox-group="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content1">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="icon icon-color icon-two-color icon-twfr-file"></i>
+                                                <span class="clip-text-inline">Accounts Payable - Narrative</span>
+                                            </td>
+                                            <td><i class="label bg-doctype-blue">Narrative</i></td>
+                                            <td>Today at 7:35 AM</td>
+                                        </tr>
+                                        <tr data-folder-key="workiva_hr-team_group-1_" data-ng-click="selectRow()" data-is-project="false" data-is-recent="true">
+                                            <td class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content2" data-cbox-group="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content2">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="icon icon-color icon-two-color icon-twfr-file-pdf"></i>
+                                                <span class="clip-text-inline">Accounts Payable - Narrative (Audit Export)</span>
+                                            </td>
+                                            <td><i class="label bg-doctype-gray">PDF</i></td>
+                                            <td>Today at 7:35 AM</td>
+                                        </tr>
+                                        <tr data-folder-key="workiva_hr-team_group-1_" data-ng-click="selectRow()" data-is-project="false" data-is-recent="false">
+                                            <td class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content3" data-cbox-group="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content3">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="icon icon-color icon-two-color icon-twfr-file-presentation"></i>
+                                                <span class="clip-text-inline">Accounts Payable - FlowChart</span>
+                                            </td>
+                                            <td><i class="label bg-doctype-orange">Flowchart</i></td>
+                                            <td>Yesterday at 8:42 PM</td>
+                                        </tr>
+                                        
+                                        <tr data-folder-key="workiva_risk-team_group-1_" data-ng-click="selectRow()" data-is-project="false" data-is-recent="false">
+                                            <td class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content16" data-cbox-group="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content16">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="icon icon-color icon-twfr-file-workbook"></i>
+                                                <span class="clip-text-inline">2015 Year-End Testing Matrix</span>
+                                            </td>
+                                            <td><i class="label bg-doctype-green">Workbook</i></td>
+                                            <td>Yesterday at 6:06 PM</td>
+                                        </tr>                                         
+                                          
+                                        <tr data-folder-key="workiva_hr-team_group-1_" data-ng-click="selectRow()" data-is-project="false" data-is-recent="false">
+                                            <td class="col-cbox">
+                                                <div class="checkbox">
+                                                    <input type="checkbox" id="selectable-row-cbox_list-group-parent-content6" data-cbox-group="selectable-row-cbox_list-group-parent-content">
+                                                    <label for="selectable-row-cbox_list-group-parent-content6">&nbsp;</label>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <i class="icon icon-color icon-two-color icon-twfr-file-msexcel"></i>
+                                                <span class="clip-text-inline">2015 Year-End Testing Matrix (Audit Export)</span>
+                                            </td>
+                                            <td><i class="label bg-doctype-gray">Excel</i></td>
+                                            <td>Yesterday at 6:06 PM</td>
+                                        </tr>
+
+            
+                                   
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wksp-sidebar  wksp-sidebar-left  wksp-sidebar-hoverable  grid-order-1">
+                    <div class="grid-reset">
+                        <div class="grid-block  grid-vertical">
+                            <div class="wksp-sidebar-masthead  wksp-sidebar-masthead-left  wksp-sidebar-content-block  grid-shrink">
+                                <div class="wksp-sidebar-content-block  wksp-sidebar-masthead-brand">
+                                    <div class="brand-img-wrapper">
+                                        <div class="brand-img brand-symbol" role="img" aria-hidden="true"></div>
+                                        <div class="brand-img brand-logo" role="img" aria-hidden="true"></div>
+                                    </div>
+                                    <div class="wksp-sidebar-min-max-control-wrapper">
+                                        <button type="button" class="hitarea sidebar-toggle">
+                                            <span class="flip-container">
+                                            <span class="flipper">
+                                                <span class="front-side">
+                                                    <i class="icon icon-chevron-double-right"></i>
+                                                </span>
+                                            <span class="back-side">
+                                                    <i class="icon icon-chevron-double-left"></i>
+                                                </span>
+                                            </span>
+                                            </span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="wksp-sidebar-content-block  wksp-sidebar-masthead-create">
+                                    <div class="grid-block grid-wrap">
+                                        <div class="wksp-create-btn-wrapper">
+                                            <button type="button" id="wksp-create-btn" class="btn btn-block btn-flat  wksp-hitarea-circle  wksp-create-btn  wksp-sidebar-btn-primary  hitarea-16" title="Create" data-toggle="popover" data-placement="bottom auto" data-content-container="temporary" data-content="#temp-create-menu-content" data-auto-width="true">
+                                                <div class="grid-block">
+                                                    <!-- Use three grid-blocks to center the icon and the text together -->
+                                                    <div class="grid-block"></div>
+                                                    <div class="grid-block  wksp-create-btn-label-wrapper">
+                                                        <i class="icon icon-plus align-left  hitarea-icon" aria-hidden="true"></i>
+                                                        <i class="wksp-hitarea-label" aria-disabled="true">Create</i>
+                                                    </div>
+                                                    <div class="grid-block"></div>
+                                                </div>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <div class="hide" aria-hidden="true" id="temp-create-menu-content">
+                                        <div role="menu" class="dropdown-menu  dropdown-menu-md">
+                                            <div role="presentation" class="menu-item hide">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-sox-report icon-two-color" aria-hidden="true"></i> Report
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file icon-color" aria-hidden="true"></i> Document
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-workbook icon-color" aria-hidden="true"></i> Workbook
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-datacollections icon-color" aria-hidden="true"></i> Data Collection
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-presentation icon-color" aria-hidden="true"></i> Presentation
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-book icon-color" aria-hidden="true"></i> Binder
+                                                </button>
+                                            </div>
+                                            <div role="separator" class="menu-item divider"></div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-sox-report icon-two-color" aria-hidden="true"></i> Report
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-database icon-two-color" aria-hidden="true"></i> Data Type
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-workbook" aria-hidden="true"></i> Data Template
+                                                </button>
+                                            </div>
+                                            <div role="separator" class="menu-item divider"></div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-project icon-color" aria-hidden="true"></i> Project
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-folder icon-color" aria-hidden="true"></i> Folder
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="hide" aria-hidden="true" id="temp-create-import-menu-content">
+                                        <div role="menu" class="dropdown-menu  dropdown-menu-md">
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-folder-zip icon-two-color" aria-hidden="true"></i> Document or Project
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-mspowerpoint icon-two-color" aria-hidden="true"></i> Powerpoint (.pptx)
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-msword icon-two-color" aria-hidden="true"></i> Word (.docx)
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-sec-sign-outline icon-two-color" aria-hidden="true"></i> From SEC
+                                                </button>
+                                            </div>
+                                            <div role="presentation" class="menu-item">
+                                                <button type="button" class="hitarea">
+                                                    <i class="icon icon-twfr-file-workbook" aria-hidden="true"></i> Data Template
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="wksp-sidebar-body  wksp-sidebar-body-left  wksp-sidebar-content-block">
+                                <div role="tablist" id="wksp-left-nav-panels" class="wksp-pill-panel-container" aria-multiselectable="true">
+                                    <div role="presentation" class="panel-group  nav  nav-pills  nav-stacked  wksp-sidebar-nav  wksp-nav-pills">
+
+
+                                        <!--
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="recent_heading" class="panel-heading  hitarea  pill-link-hover" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="recent" data-target="#recent" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-recently-updated hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">My Recent</i>
+                                            </div>
+                                            <div id="recent" class="panel panel-collapse collapse  hide" tabindex="-1" aria-hidden="true" aria-labelledby="reports_heading">
+                                                <div class="panel-body">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        -->
+                                       
+                                       <!--
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="tasks_heading" class="panel-heading  hitarea  pill-link-hover" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="tasks" data-target="#tasks" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-task-create hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">Tasks</i>
+                                            </div>
+                                            <div id="tasks" class="panel panel-collapse collapse  hide" tabindex="-1" aria-hidden="true" aria-labelledby="reports_heading">
+                                                <div class="panel-body">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        -->
+
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="reports_heading" class="panel-heading  hitarea  pill-link-hover" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="reports" data-target="#reports" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-file-sox-report  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">Reports</i>
+                                            </div>
+                                            <div id="reports" class="panel panel-collapse collapse  hide" tabindex="-1" aria-hidden="true" aria-labelledby="reports_heading">
+                                                <div class="panel-body">
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="tasks_heading" class="panel-heading  hitarea  pill-link-hover" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="dashboard" data-target="#dashboard" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-dashboard hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">Dashboards</i>
+                                            </div>
+                                            <div id="dashboard" class="panel panel-collapse collapse  hide" tabindex="-1" aria-hidden="true" aria-labelledby="reports_heading">
+                                                <div class="panel-body">
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="data_heading" class="panel-heading  hitarea  pill-link-hover  wksp-pill-panel-is-collapsible" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="data" data-target="#data" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-database  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">Data</i>
+                                            </div>
+                                            <div id="data" class="panel panel-collapse collapse" tabindex="-1" aria-hidden="true" aria-labelledby="data_heading">
+                                                <div class="panel-body">
+                                                    <div class="nav  nav-pills  nav-stacked  wksp-nav-pills">
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Assertion</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Business Unit</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">   
+                                                            <a role="button" href="index.html" class="hitarea  pill-link-hover">Control</a>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Entity</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Flow Chart</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Grouping</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Line Item</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Location</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Person</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Process</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Region</button>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <button type="button" class="hitarea  pill-link-hover">Risk</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+
+
+
+
+
+                                        <div role="presentation" class="panel  wksp-pill-panel  nav-item">
+                                            <div role="button" id="documents_heading" class="panel-heading  hitarea  pill-link-hover  wksp-pill-panel-is-collapsible open" tabindex="0" aria-selected="false" aria-expanded="false" aria-controls="documents" data-target="#documents" data-toggle="collapse" data-parent="#wksp-left-nav-panels">
+                                                <i class="icon icon-twfr-folder  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true">Documents</i>
+                                            </div>
+                                            <div id="documents" class="panel panel-collapse collapse in" tabindex="-1" aria-hidden="true" aria-labelledby="documents_heading">
+                                                <div class="panel-body">
+                                                    <div class="nav  nav-pills  nav-stacked  wksp-nav-pills">
+                                                       <div role="presentation" class="nav-item">
+                                                            <a role="button" href="sox-home-1a.html" class="hitarea  pill-link-hover active">
+                                                                My Recent
+                                                            </a>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <a role="button" href="sox-home-1b.html" class="hitarea  pill-link-hover">
+                                                                Projects
+                                                            </a>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                            <a role="button" href="sox-home-1c.html" class="hitarea  pill-link-hover">
+                                                                ABC Company
+                                                            </a>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item sub-item">
+                                                            <a role="button" href="sox-home-1d.html" class="hitarea  pill-link-hover">
+                                                                SOX
+                                                            </a>
+                                                        </div>
+                                                        <div role="presentation" class="nav-item">
+                                                                <button type="button" class="hitarea  pill-link-hover">
+                                                                    Trash
+                                                                </button>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="wksp-sidebar-footer  wksp-sidebar-footer-left  wksp-sidebar-content-block  grid-shrink">
+                                <ul role="group" class="nav  nav-pills  nav-stacked  wksp-sidebar-nav  wksp-nav-pills">
+                                    <li role="presentation" class="nav-item">
+                                        <button type="button" id="wksp-user-profile-btn" class="hitarea  pill-link-hover  wksp-hitarea-circle" data-toggle="popover" data-placement="top auto" data-content-container="temporary" data-content="#temp-user-profile-menu-content" data-auto-width="true">
+                                            <i class="icon icon-twfr-user-profile  hitarea-icon" aria-hidden="true"></i>
+                                            <i class="wksp-hitarea-label" aria-disabled="true">
+                                            <i class="user-name">Test User</i>
+                                            </i>
+                                        </button>
+
+                                        <div class="hide" aria-hidden="true" id="temp-user-profile-menu-content">
+                                            <div role="menu" class="dropdown-menu  dropdown-menu-md" aria-labelledby="wksp-user-profile-btn">
+                                                <div role="separator" class="menu-item  dropdown-info">
+                                                    <h5 class="dropdown-header">Account</h5>
+                                                    <ul class="list-unstyled">
+                                                        <li title="ABC Company Account">
+                                                            ABC Company
+                                                        </li>
+                                                    </ul>
+                                                    <h5 class="dropdown-header">Last Login</h5>
+                                                    <ul class="list-unstyled">
+                                                        <li title="March 3, 2008, 4:21 PM | Ames, IA | IP: 65.113.109.54">
+                                                            3 hours ago, Ames, IA
+                                                        </li>
+                                                        <li title="Jan 20, 2007, 7:30 PM | Minneapolis, MN | IP: 65.11.254.157">
+                                                            Jan 20, Minneapolis, MN
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#profile">
+                                                    My Profile
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#switch-account">
+                                                    Switch Account
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#sign-out">
+                                                    Sign Out
+                                                </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+                                    <li role="presentation" class="nav-item">
+                                        <button type="button" id="wksp-user-profile-btn" class="hitarea  pill-link-hover  wksp-hitarea-circle" data-toggle="popover" data-placement="top auto" data-content-container="temporary" data-content="#temp-admin-menu-content" data-auto-width="true">
+                                            <i class="icon icon-twfr-cog  hitarea-icon" aria-hidden="true"></i>
+                                            <i class="wksp-hitarea-label" aria-disabled="true">
+                                            <i class="user-name">Admin</i>
+                                            </i>
+                                        </button>
+
+                                        <div class="hide" aria-hidden="true" id="temp-admin-menu-content">
+                                            <div role="menu" class="dropdown-menu  dropdown-menu-md" aria-labelledby="wksp-user-profile-btn">
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#user-admin">User Admin</a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#group-admin">Group Admin</a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#group-admin">Content Admin</a>
+                                                </div>
+                                                <div role="separator" class="menu-item  divider"></div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#group-admin">Certifications Admin</a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#group-admin">Binders Admin</a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#group-admin">Section 16 Admin</a>
+                                                </div>
+                                                <div role="separator" class="menu-item  divider"></div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#security">Security Settings</a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#sign-out">Account Settings</a>
+                                                </div>
+                                                <div role="separator" class="menu-item  divider"></div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#sign-out">Activity</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+
+
+                                    <li role="presentation" class="nav-item  global-community">
+                                        <button type="button" id="wksp-help-btn" class="hitarea  pill-link-hover  pill-link-help-hover  wksp-hitarea-circle" data-toggle="popover" data-placement="top auto" data-content-container="temporary" data-content="#temp-help-menu-content" data-auto-width="true">
+                                            <i class="icon icon-twfr-help-sign  hitarea-icon" aria-hidden="true"></i>
+                                            <i class="wksp-hitarea-label" aria-disabled="true">
+                                            Help
+                                        </i>
+                                        </button>
+
+                                        <div class="hide" aria-hidden="true" id="temp-help-menu-content">
+                                            <div role="menu" class="dropdown-menu  dropdown-menu-md" aria-labelledby="wksp-help-btn">
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#help">
+                                                    Help
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#explore">
+                                                    Explore
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#community">
+                                                    Community
+                                                </a>
+                                                </div>
+                                                <div role="separator" class="menu-item  divider"></div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#about">
+                                                    About Wdesk
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#new-features">
+                                                    New Features
+                                                </a>
+                                                </div>
+                                                <div role="presentation" class="menu-item">
+                                                    <a class="hitarea" tabindex="-1" href="#contact-support">
+                                                    Contact Support
+                                                </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="wksp-sidebar  wksp-sidebar-minimized  wksp-sidebar-right  wksp-sidebar-hoverable  grid-order-3">
+                    <div class="grid-reset">
+                        <div class="grid-block  grid-vertical">
+                            <div class="wksp-sidebar-masthead  wksp-sidebar-masthead-right  wksp-sidebar-content-block  grid-shrink  hide-border">
+                                <div class="wksp-sidebar-min-max-control-wrapper">
+                                    <button type="button" class="hitarea sidebar-toggle">
+                                        <span class="flip-container">
+                                        <span class="flipper">
+                                            <span class="front-side">
+                                                <i class="icon icon-chevron-double-right"></i>
+                                            </span>
+                                        <span class="back-side">
+                                                <i class="icon icon-chevron-double-left"></i>
+                                            </span>
+                                        </span>
+                                        </span>
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="wksp-sidebar-body  wksp-sidebar-body-right  wksp-sidebar-content-block">
+                                <div class="tabbable tabs-right">
+                                    <ul role="tablist" class="nav  nav-pills  nav-stacked  wksp-sidebar-nav  wksp-nav-pills">
+                                        <li role="presentation" class="nav-item">
+                                            <button role="tab" type="button" id="filters-tab" class="hitarea  hitarea-16  pill-link-hover" aria-selected="false" aria-controls="filters" data-target="#filters" data-toggle="tab">
+                                                <i class="icon icon-filter-outline  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true" tabindex="-1">Filters</i>
+                                            </button>
+                                        </li>
+                                        <li role="presentation" class="nav-item">
+                                            <button role="tab" type="button" id="comments-tab" class="hitarea  hitarea-16  pill-link-hover" aria-selected="false" aria-controls="comments" data-target="#comments" data-toggle="tab">
+                                                <i class="icon icon-comment-outline  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true" tabindex="-1">Comments</i>
+                                            </button>
+                                        </li>
+                                        <li role="presentation" class="nav-item">
+                                            <button role="tab" type="button" id="links-tab" class="hitarea  hitarea-16  pill-link-hover" aria-selected="false" aria-controls="links" data-target="#links" data-toggle="tab">
+                                                <i class="icon icon-link  hitarea-icon" aria-hidden="true"></i>
+                                                <i class="wksp-hitarea-label" aria-disabled="true" tabindex="-1">Links</i>
+                                            </button>
+                                        </li>
+                                    </ul>
+
+                                    <div class="tab-content">
+                                        <div role="tabpanel" id="filters" tabindex="-1" class="tab-pane" aria-hidden="true" aria-labelledby="filters-tab">
+                                            Filters Content
+                                        </div>
+                                        <div role="tabpanel" id="comments" tabindex="-1" class="tab-pane" aria-hidden="true" aria-labelledby="comments-tab">
+                                            Comments Content
+                                        </div>
+                                        <div role="tabpanel" id="links" tabindex="-1" class="tab-pane" aria-hidden="true" aria-labelledby="links-tab">
+                                            Links Content
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../../assets/js/workspaces/workspaces-demo.js"></script>
+
+
+
+    <!-- JS and analytics only. -->
+
+
+
+    <!-- Web Skin core JavaScript
+    ================================================== -->
+    <script src="../../assets/dist/js/web-skin.dev.js"></script>
+
+
+
+
+
+</body>
+
+</html>
